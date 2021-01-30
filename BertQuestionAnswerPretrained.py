@@ -11,23 +11,23 @@ DATASET_PATH = "./comm_use_subset/*.json"
 data_dict = dict()
 text_list = list()
 
-for json_file in glob(DATASET_PATH):
-    with open(json_file) as file:
-        data = json.load(file)
-
-      
-        if len(data["metadata"]["title"]) != 0:
-            value = data["metadata"]["title"]
-        else:
-            value = data["paper_id"]
-
-        if len(data["abstract"]) != 0:
-            key = data["abstract"][0]["text"]
-        else:
-            key = data["body_text"][0]["text"]
-
-        text_list.append(key)
-        data_dict[key] = value
+# for json_file in glob(DATASET_PATH):
+#     with open(json_file) as file:
+#         data = json.load(file)
+#
+#
+#         if len(data["metadata"]["title"]) != 0:
+#             value = data["metadata"]["title"]
+#         else:
+#             value = data["paper_id"]
+#
+#         if len(data["abstract"]) != 0:
+#             key = data["abstract"][0]["text"]
+#         else:
+#             key = data["body_text"][0]["text"]
+#
+#         text_list.append(key)
+#         data_dict[key] = value
 
 
 # We use the Bi-Encoder to encode all text,
